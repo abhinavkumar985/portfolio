@@ -264,7 +264,7 @@ footer {
   color: #f9f9f9;
   text-align: center;
   padding-top: 140px;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
   /* height: 500px; */
   background: #784af6;
 }
@@ -339,4 +339,30 @@ footer {
   .experience h4 {
     font-size: 20px;
   }
+}
+.line-1{
+  /* position: relative; */
+  /* top: 50%;   */
+  width: 8em;
+  margin: 0 auto;
+  border-right: 2px solid rgb(21 28 59);
+  /* font-size: 180%; */
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  /* transform: translateY(-50%);     */
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 2s steps(44) 1s 1 normal both,
+  blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 8em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgb(21 28 59);}
+  to{border-right-color: transparent;}
 }
