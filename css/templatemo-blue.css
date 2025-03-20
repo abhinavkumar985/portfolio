@@ -366,3 +366,18 @@ footer {
   from{border-right-color: rgb(21 28 59);}
   to{border-right-color: transparent;}
 }
+.read-link{
+  margin-top: 40px;
+  text-align: center;
+  font-size: 23px;
+  font-family: cursive;
+  letter-spacing: 2.5px;
+}
+
+.read-link-add{
+  color: white;
+  text-decoration: underline;
+  font-family: monospace;
+  font-size: 18px;
+  letter-spacing: 0;
+}
