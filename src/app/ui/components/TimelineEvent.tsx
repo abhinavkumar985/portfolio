@@ -1,9 +1,9 @@
 "use client";
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FaGraduationCap, FaBriefcase, FaPlane, FaUserGraduate, FaUserTie, FaBlogger, FaHandHoldingHeart, FaStar } from 'react-icons/fa';
-import LinkPreview from './LinkPreview';
+import { FaBriefcase, FaPlane, FaUserGraduate, FaUserTie, FaBlogger, FaHandHoldingHeart, FaStar } from 'react-icons/fa';
 import VerticalDivider from './VerticalDivider';
+import { TimelineEventProps } from './types';
 
 const iconMap = {
     graduation: <FaUserGraduate className="text-neon-cyan mr-2" size="22" />,
@@ -12,14 +12,20 @@ const iconMap = {
     trainer: <FaUserTie className="text-neon-cyan mr-2" size="22" />,
     blog: <FaBlogger className="text-neon-cyan mr-2" size="22" />,
     support: <FaHandHoldingHeart className="text-neon-cyan mr-2" size="22" />,
-
 };
-// @ts-ignore
-const TimelineEvent = ({ year, title, description, pills, icon, delay, company, location, links }) => {
+
+interface Link {
+    url: string;
+    description: string;
+    addionalInfo?: string;
+}
+
+const TimelineEvent: React.FC<TimelineEventProps> = ({ year, title, description, pills, icon, delay, company, location, links }) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true});
-    // @ts-ignore
+    const isInView = useInView(ref, { once: true });
+    //@ts-ignore
     const iconElement = iconMap[icon];
+
     return (
         <>
             <motion.div
@@ -32,29 +38,28 @@ const TimelineEvent = ({ year, title, description, pills, icon, delay, company, 
                 <VerticalDivider title={year} description={title} icon={iconElement} />
                 {/* Event Content */}
                 <div
-                    className={`w-full  shadow-lg p-4 rounded-lg bg-white`}
+                    className={`w-full shadow-lg p-4 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-300`}
                 >
-                    {/* <h4 className="text-xl font-semibold flex">{iconMap[icon]}</h4> */}
-                    {/* @ts-ignore */}
                     <h4 className="text-l font-semibold flex"> {company}</h4>
                     <h3 className="text-l text-accent font-mono">{location}</h3>
-                    <p className={`mt-3 ${icon === 'job' || icon === 'trainer' ? 'font-sans': 'font-mono'}`}>{description}</p>
-                    {/* <LinkPreview url={'https://corporate.zalando.com/en/technology/zalando-launch-fashion-assistant-powered-chatgpt'} /> */}
-                    {pills.length > 0 && <div className="mt-4 flex flex-wrap gap-2">
-                        {/* @ts-ignore */}
-                        {pills.map((pill, index) => (
-                            <span
-                                key={index}
-                                className="text-white px-3 py-1 rounded-full text-sm font-medium bg-gray-500 shadow-lg"
-                            >
-                                {pill}
-                            </span>
-                        ))}
-                    </div>}
+                    <p className={`mt-3 ${icon === 'job' || icon === 'trainer' ? 'font-sans' : 'font-mono'}`}>{description}</p>
+                    {pills.length > 0 && (
+                        <div className="mt-4 flex flex-wrap gap-2">
+                            {pills.map((pill, index) => (
+                                <span
+                                    key={index}
+                                    className="text-white dark:text-gray-900 px-3 py-1 rounded-full text-sm font-medium bg-gray-500 dark:bg-gray-300 shadow-lg"
+                                >
+                                    {pill}
+                                </span>
+                            ))}
+                        </div>
+                    )}
                     <div className="mt-4">
-                        {/* @ts-ignore */}
                         {links?.map((link, index) => (
-                            <div key={index} className="flex gap-2" style={{alignItems: 'anchor-center'}}><FaStar /> {link.addionalInfo} <a href={link.url} target='_blank' className="font-medium text-blue-500 hover:underline" >{link.description}</a></div>
+                            <div key={index} className="flex gap-2" style={{ alignItems: 'anchor-center' }}>
+                                <FaStar /> {link.addionalInfo} <a href={link.url} target='_blank' className="font-medium text-teal-700 dark:text-teal-400 hover:underline" >{link.description}</a>
+                            </div>
                         ))}
                     </div>
                 </div>

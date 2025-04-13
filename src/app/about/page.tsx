@@ -205,7 +205,7 @@ export default function About() {
                         {skills.reverse().map((skill) => (
                             <span
                                 key={skill}
-                                className="text-white px-4 py-2 rounded-full text-sm font-medium bg-blue-500"
+                                className="px-4 py-2 rounded-full text-sm font-medium bg-teal-600 text-white"
                             >
                                 {skill}
                             </span>

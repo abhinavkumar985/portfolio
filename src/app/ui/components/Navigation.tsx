@@ -1,6 +1,9 @@
 import Link from 'next/link';
+import { useTheme } from './ThemeContext';
 
 const Navigation = () => {
+    const { theme } = useTheme(); // Remove toggleTheme as it's no longer needed
+
     return (
         <header>
             <nav className="fixed top-0 left-0 w-full bg-gray-900 text-white p-4 z-10" style={{ zIndex: 100 }}>
