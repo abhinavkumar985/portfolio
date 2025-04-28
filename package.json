@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fetch-metadata": "node src/app/api/link-preview/fetch-article-meta-data.js"
+    "fetch-metadata": "node src/app/api/link-preview/fetch-article-meta-data.js",
+    "postinstall": "npm run fetch-metadata"
   },
   "dependencies": {
     "jsdom": "^26.0.0",

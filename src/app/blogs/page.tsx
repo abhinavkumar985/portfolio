@@ -1,8 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
 import { BlogCategory, BlogDetails } from "../ui/components/types";
 import Blog from "../ui/components/Blog";
 import { FaMedium } from "react-icons/fa";
+import jsonData from "../api/link-preview/article-metadata.json";
+import { useEffect, useState } from "react";
 
 export default function Blogs() {
     const [groupedBlogs, setGroupedBlogs] = useState<BlogCategory[]>([]);
@@ -10,8 +11,10 @@ export default function Blogs() {
     useEffect(() => {
         const fetchMetadata = async () => {
             try {
-                const response = await fetch("/api/blogs");
-                const metadata: BlogDetails[] = await response.json();
+                // For Dynamic fetching, uncomment the following lines
+                // const response = await fetch("/api/blogs");
+                // const metadata: BlogDetails[] = response as BlogDetails[];
+                const metadata: BlogDetails[] = jsonData as BlogDetails[];
                 const grouped: BlogCategory[] = metadata.reduce((acc, blog) => {
                     const category = acc.find((c: BlogCategory) => c.category_name === blog.category_name);
                     if (category) {

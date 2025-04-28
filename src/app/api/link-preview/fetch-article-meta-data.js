@@ -1,4 +1,8 @@
-import {JSDOM} from "jsdom";
+// This API route has been disabled for static export compatibility.
+// export async function GET() {
+//   return NextResponse.json(metadata);
+// }
+import { JSDOM } from "jsdom";
 import fs from "fs";
 import path from "path";
 const categories = [
@@ -26,9 +30,9 @@ const categories = [
       "https://medium.com/@abhinavkumar985/moving-to-germany-as-a-software-engineer-part-2-3a36f8cffdf4",
       "https://medium.com/@abhinavkumar985/moving-to-germany-as-a-software-engineer-part-3-e8def6053abd",
       "https://medium.com/@abhinavkumar985/my-journey-to-zalando-se-berlin-part-4-91b8ab6ed234",
-      "https://levelup.gitconnected.com/zalando-interview-experience-9635dc7d0b56",
       "https://abhinavkumar985.medium.com/moving-to-germany-is-now-easier-than-ever-with-the-new-opportunity-card-25e5e988ee4e",
-      "https://levelup.gitconnected.com/a-bit-about-germanys-economy-social-life-5ee8761437f8"
+      "https://levelup.gitconnected.com/a-bit-about-germanys-economy-social-life-5ee8761437f8",
+      "https://abhinavkumar985.medium.com/the-reality-of-1-euro-houses-in-italy-30a38a8012c"
     ]
   },
   {
@@ -70,6 +74,8 @@ async function fetchMetaData() {
     }
   }
 
+  // const outputPath = path.join(__dirname, "article-metadata.json");
+  const __dirname = path.dirname(new URL(import.meta.url).pathname);
   const outputPath = path.join(__dirname, "article-metadata.json");
   fs.writeFileSync(outputPath, JSON.stringify(results, null, 2));
   console.log(`Metadata written to ${outputPath}`);
