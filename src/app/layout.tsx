@@ -25,7 +25,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={theme}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Abhinav Kumar | Senior Engineer @ Zalando | Scalable UX & Frontend Systems</title>
+        <meta name="description" content="Welcome to my portfolio. Explore my projects, blogs, and connect with me." />
+        <meta name="keywords" content="portfolio, blogs, projects, developer" />
+        <meta name="author" content="Abhinav Kumar" />
+
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Abhinav Kumar | Senior Engineer @ Zalando | Scalable UX & Frontend Systems" />
+        <meta property="og:description" content="Welcome to my portfolio. Explore my projects, blogs, and connect with me." />
+        <meta property="og:image" content="/public/globe.svg" />
+        <meta property="og:url" content="https://your-portfolio-url.com" />
+        <meta property="og:type" content="website" />
+
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://your-portfolio-url.com/sitemap.xml
