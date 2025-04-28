@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { BlogCategory, BlogDetails } from "../ui/components/types";
 import Blog from "../ui/components/Blog";
+import { FaMedium } from "react-icons/fa";
 
 export default function Blogs() {
     const [groupedBlogs, setGroupedBlogs] = useState<BlogCategory[]>([]);
@@ -30,11 +31,11 @@ export default function Blogs() {
     }, []);
 
     return (
-        <div className="p-4">
+        <div className="sm:p-0 lg:p-4 mt-8">
             {groupedBlogs.map((category, index) => (
-                <div key={index} className={`mb-8 p-4 rounded-lg`}>
-                    <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-200">{category.category_name}</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div key={index} className={`mb-8 rounded-lg lg:p-4 sm:p-1 `}>
+                    <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-200 flex items-center"> <FaMedium /> <span className="ml-2">{category.category_name}</span></h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {category.blogs.map((blog, idx) => (
                             <Blog key={idx} data={blog} />
                         ))}

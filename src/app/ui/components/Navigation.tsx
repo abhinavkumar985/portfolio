@@ -1,21 +1,24 @@
+"use client";
 import Link from 'next/link';
-import { useTheme } from './ThemeContext';
+import { usePathname } from 'next/navigation';
 
 const Navigation = () => {
-    const { theme } = useTheme(); // Remove toggleTheme as it's no longer needed
-
+    const pathname = usePathname();
     return (
         <header>
             <nav className="fixed top-0 left-0 w-full bg-gray-900 text-white p-4 z-10" style={{ zIndex: 100 }}>
-                <ul className="flex justify-center space-x-6">
+                <ul className="flex justify-center space-x-10">
                     <li>
-                        <Link href="/about" className="hover:text-teal-400 transition">About</Link>
+                        <Link href="/about"
+                            className={`transition hover:text-teal-400 ${pathname === '/about' ? 'text-teal-400 font-bold' : ''}`}
+                        >About</Link>
                     </li>
                     <li>
-                        <Link href="/blogs" className="hover:text-teal-400 transition">Blogs</Link>
+                        <Link href="/blogs"
+                            className={`transition hover:text-teal-400 ${pathname === '/blogs' ? 'text-teal-400 font-bold' : ''}`}
+                        >Blogs</Link>
                     </li>
                     <li>
-                        <Link href="/connect" className="hover:text-teal-400 transition">Connect</Link>
                     </li>
                 </ul>
             </nav>

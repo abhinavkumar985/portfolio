@@ -1,4 +1,4 @@
-import { FaLinkedin, FaGithub, FaMedium, FaTwitter, FaRss } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaMedium, FaDev, FaStackOverflow } from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -37,20 +37,20 @@ const Footer = () => {
                         <FaMedium />
                     </a>
                     <a
-                        href="https://x.com/abhinav985"
+                        href="https://g.dev/abhinavkumar985"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-teal-400 dark:text-teal-300 text-3xl hover:text-teal-300 dark:hover:text-teal-200 transition-colors"
                     >
-                        <FaTwitter />
+                        <FaDev />
                     </a>
                     <a
-                        href="/blogs"
+                        href="https://stackoverflow.com/users/9406763/abhinav-kumar"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-teal-400 dark:text-teal-300 text-3xl hover:text-teal-300 dark:hover:text-teal-200 transition-colors"
                     >
-                        <FaRss />
+                        <FaStackOverflow />
                     </a>
                 </div>
 

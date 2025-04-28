@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <Navigation />
-          <main className="grid p-8 pb-20 sm:p-20">
+          <main className="grid p-8 pb-20 sm:p-20 sm:mt-8 lg:mt-0">
             {children}
           </main>
           <Footer />

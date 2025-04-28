@@ -58,7 +58,7 @@ const TimelineEvent: React.FC<TimelineEventProps> = ({ year, title, description,
                     <div className="mt-4">
                         {links?.map((link, index) => (
                             <div key={index} className="flex gap-2" style={{ alignItems: 'anchor-center' }}>
-                                <FaStar /> {link.addionalInfo} <a href={link.url} target='_blank' className="font-medium text-teal-700 dark:text-teal-400 hover:underline" >{link.description}</a>
+                                <FaStar /> <a href={link.url} target='_blank' className="font-medium text-teal-700 dark:text-teal-400 hover:underline" title={link.addionalInfo}>{link.description}</a>
                             </div>
                         ))}
                     </div>

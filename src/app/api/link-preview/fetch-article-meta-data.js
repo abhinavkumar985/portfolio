@@ -4,7 +4,7 @@ const path = require("path");
 
 const categories = [
   {
-    category_name: "JavaScript",
+    category_name: "Technology",
     links: [
       "https://medium.com/gitconnected/no-more-external-js-for-custom-dropdowns-native-select-is-now-fully-customizable-b43050f5cb2b",
       "https://medium.com/javascript-in-plain-english/typescript-5-8-smarter-faster-and-more-efficient-30b5ea678ede",
@@ -16,13 +16,13 @@ const categories = [
       "https://medium.com/javascript-in-plain-english/did-you-use-hidden-until-found-html-attribute-9b2eeca81393",
       "https://medium.com/javascript-in-plain-english/did-you-use-is-a-css-pseudo-class-function-ed2f366cfd2d",
       "https://medium.com/javascript-in-plain-english/the-web-is-always-under-construction-google-chrome-in-2023-1c0e6897579e",
-      "https://medium.com/javascript-in-plain-english/nodejs-webhook-for-dialogflow-fulfillment-a8e392b257b8"
+      "https://medium.com/javascript-in-plain-english/nodejs-webhook-for-dialogflow-fulfillment-a8e392b257b8",
+      "https://medium.com/@abhinavkumar985/exploring-node-js-18-feature-3428f4b72b9f",
     ]
   },
   {
     category_name: "Personal Journey",
     links: [
-      "https://medium.com/@abhinavkumar985/exploring-node-js-18-feature-3428f4b72b9f",
       "https://medium.com/@abhinavkumar985/moving-to-germany-as-a-software-engineer-part-1-935fb21a6b52",
       "https://medium.com/@abhinavkumar985/moving-to-germany-as-a-software-engineer-part-2-3a36f8cffdf4",
       "https://medium.com/@abhinavkumar985/moving-to-germany-as-a-software-engineer-part-3-e8def6053abd",

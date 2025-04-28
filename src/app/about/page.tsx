@@ -1,8 +1,7 @@
 "use client";
-import { FaLinkedin, FaGithub, FaMedium, FaTwitter, FaRss } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaMedium } from 'react-icons/fa';
 import { motion } from "motion/react";
 import Timeline from '../ui/components/Timeline';
-import { p } from 'motion/react-client';
 
 export default function About() {
     const experienceEvents = [
@@ -18,7 +17,7 @@ export default function About() {
         },
         {
             year: 'July, 2014',
-            title: 'Software Developer (Trainer)',
+            title: 'Software Developer',
             company: 'TCS Ignite labs',
             location: 'Chennai, India',
             description: "I started my career as a trainee at TCS Ignite Labs and was selected for advanced training. Since then, I’ve worked on data-centric and visualization projects, along with leadership activities focused on skill development. For 2.5 years, I trained a new batch of 24 graduates every six months in the latest technologies, supporting Ignite’s mission by leveraging modern tools and practices.",
@@ -47,8 +46,8 @@ export default function About() {
             links: [
                 {
                     addionalInfo: 'Check out this cool demo I built',
-                    url: 'https://lion.app.box.com/file/608813060533',
-                    description: 'Action on Google Assistant',
+                    url: 'https://lion.app.box.com/s/1n8ivywqbircm4viugcb3nsuynrcj8v1',
+                    description: 'Cool demo from 2019, Action on Google Assistant',
                 },
             ]
         },
@@ -105,7 +104,7 @@ export default function About() {
             title: 'Volunteer Talent Coach',
             comany: 'Imagine Foundation',
             description:
-                'I volunteer as a coach at ImagineI volunteer with the Imagine Foundation, mentoring tech talents from regions like Afghanistan, Egypt, Nigeria, and Pakistan. I help them unlock their potential by reviewing CVs, providing LinkedIn feedback, and guiding them toward job opportunities in Europe., helping emerging talent take their first steps in tech. From reviewing CVs to giving feedback and mentoring, it’s an experience that keeps me connected to the next generation of innovators.',
+                'I volunteer as a coach at Imagine, mentoring tech talents from regions like Afghanistan, Egypt, Nigeria, and Pakistan. I help them unlock their potential by reviewing CVs, providing LinkedIn feedback, and guiding them toward job opportunities in Europe., helping emerging talent take their first steps in tech. From reviewing CVs to giving feedback and mentoring, it’s an experience that keeps me connected to the next generation of innovators.',
             icon: 'support',
             pills: [],
             links: [
@@ -185,7 +184,7 @@ export default function About() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="mt-16"
                 >
-                    <h2 className="text-3xl font-semibold text-center">
+                    <h2 className="text-4xl font-semibold text-center">
                         My Journey
                     </h2>
                     <Timeline events={experienceEvents} />

@@ -1,6 +1,6 @@
 [
     {
-      "category_name": "JavaScript",
+      "category_name": "Technology",
       "url": "https://medium.com/gitconnected/no-more-external-js-for-custom-dropdowns-native-select-is-now-fully-customizable-b43050f5cb2b",
       "title": "No More External JS for Custom Dropdowns: Native <select> is Now Fully Customizable",
       "description": "The <select> element has been with us since 1995 — yep, that’s almost 30 years of clunky dropdowns. For years, customizing the <select>…",
@@ -8,7 +8,7 @@
       "hostname": "medium.com"
     },
     {
-      "category_name": "JavaScript",
+      "category_name": "Technology",
       "url": "https://medium.com/javascript-in-plain-english/typescript-5-8-smarter-faster-and-more-efficient-30b5ea678ede",
       "title": "TypeScript 5.8: Smarter, Faster, and More Efficient",
       "description": "Click here to read the free version",
@@ -16,7 +16,7 @@
       "hostname": "medium.com"
     },
     {
-      "category_name": "JavaScript",
+      "category_name": "Technology",
       "url": "https://medium.com/gitconnected/most-unused-javascript-array-functions-1b11550c881b",
       "title": "Most unused JavaScript Array functions",
       "description": "You probably won’t use them every day, but let’s explore these few lesser-known JavaScript array functions",
@@ -24,7 +24,7 @@
       "hostname": "medium.com"
     },
     {
-      "category_name": "JavaScript",
+      "category_name": "Technology",
       "url": "https://medium.com/gitconnected/the-cookie-crumbles-topics-api-googles-new-privacy-centric-ad-targeting-in-2024-172c1f383409",
       "title": "The Cookie Crumbles: Topics API, Google’s New Privacy-Centric Ad Targeting in 2024",
       "description": "An In-Depth Exploration of the Topics API and Its Privacy Controls Compared to Third-Party Cookie Trackers",
@@ -32,7 +32,7 @@
       "hostname": "medium.com"
     },
     {
-      "category_name": "JavaScript",
+      "category_name": "Technology",
       "url": "https://medium.com/gitconnected/breaking-loops-in-style-have-you-used-labeled-statements-in-javascript-0957e20af80b",
       "title": "Breaking Loops in Style: Have you used labeled statements in JavaScript",
       "description": "You can read the free version of this story here.",
@@ -40,7 +40,7 @@
       "hostname": "medium.com"
     },
     {
-      "category_name": "JavaScript",
+      "category_name": "Technology",
       "url": "https://medium.com/javascript-in-plain-english/boost-your-web-page-rendering-performance-by-using-content-visibility-5fe4e2fc4fa6",
       "title": "Boost your web page rendering performance by using content-visibility",
       "description": "In This article, I will explain a new CSS property content-visibility and its use case, specific to the web page loading performance and…",
@@ -48,7 +48,7 @@
       "hostname": "medium.com"
     },
     {
-      "category_name": "JavaScript",
+      "category_name": "Technology",
       "url": "https://medium.com/javascript-in-plain-english/creating-scroll-animations-with-new-scroll-driven-animations-api-74ac61c34b21",
       "title": "Create scroll animations with new Scroll-driven Animations API",
       "description": "Gain insights into using Scroll Timelines and View Timelines to build scroll-driven animations declaratively.",
@@ -56,7 +56,7 @@
       "hostname": "medium.com"
     },
     {
-      "category_name": "JavaScript",
+      "category_name": "Technology",
       "url": "https://medium.com/javascript-in-plain-english/did-you-use-hidden-until-found-html-attribute-9b2eeca81393",
       "title": "Did you use hidden until-found HTML attribute?",
       "description": "Use hidden until-found and onbeforematch together to make hidden content searchable on the page.",
@@ -64,7 +64,7 @@
       "hostname": "medium.com"
     },
     {
-      "category_name": "JavaScript",
+      "category_name": "Technology",
       "url": "https://medium.com/javascript-in-plain-english/did-you-use-is-a-css-pseudo-class-function-ed2f366cfd2d",
       "title": "Did you use :is(), A CSS pseudo-class function",
       "description": ":is() make CSS simpler and cleaner",
@@ -72,7 +72,7 @@
       "hostname": "medium.com"
     },
     {
-      "category_name": "JavaScript",
+      "category_name": "Technology",
       "url": "https://medium.com/javascript-in-plain-english/the-web-is-always-under-construction-google-chrome-in-2023-1c0e6897579e",
       "title": "The Web is always under construction | Google Chrome in 2023",
       "description": "The latest development in Google Chrome and Project Fugu",
@@ -80,7 +80,7 @@
       "hostname": "medium.com"
     },
     {
-      "category_name": "JavaScript",
+      "category_name": "Technology",
       "url": "https://medium.com/javascript-in-plain-english/nodejs-webhook-for-dialogflow-fulfillment-a8e392b257b8",
       "title": "NodeJS Webhook for Dialogflow Fulfillment",
       "description": "When you are building an agent on Dialogflow, it is important to setup webhook fulfillment especially when your agent grows and has a…",
@@ -88,7 +88,7 @@
       "hostname": "medium.com"
     },
     {
-      "category_name": "Personal Journey",
+      "category_name": "Technology",
       "url": "https://medium.com/@abhinavkumar985/exploring-node-js-18-feature-3428f4b72b9f",
       "title": "Exploring Node.js 18 Features",
       "description": "Exploring some of the new exciting features in NodeJS 18, My top 3 features, that I am definitely going to use.",
