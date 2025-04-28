@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import TimelineEvent from './TimelineEvent';
 
-// @ts-ignore
+// @ts-expect-error type error
 const Timeline = ({ events }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
@@ -19,7 +19,7 @@ const Timeline = ({ events }) => {
             aria-label="Timeline of events"
         >
             {/* Events */}
-            {/* @ts-ignore */}
+            {/* @ts-expect-error type error */}
             {events.map((event, index) => (
                 <TimelineEvent
                     key={index}

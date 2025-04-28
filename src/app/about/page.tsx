@@ -119,9 +119,9 @@ export default function About() {
 
     const skills = experienceEvents.reduce((acc, index) => {
         index.pills.forEach((pill: string) => {
-            // @ts-ignore
+            // @ts-expect-error type error type error
             if (!acc.includes(pill)) {
-                // @ts-ignore
+                // @ts-expect-error type error type error
                 acc.push(pill);
             }
         });

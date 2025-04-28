@@ -1,7 +1,6 @@
 // components/VerticalDivider.tsx
 
 import React from "react";
-import { FaUserGraduate } from "react-icons/fa";
 
 interface VerticalDividerProps {
     title: string;

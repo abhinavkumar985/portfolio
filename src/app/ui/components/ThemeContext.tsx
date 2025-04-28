@@ -6,11 +6,14 @@ const ThemeContext = createContext({
 });
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<'light' | 'dark'>(
-    window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  );
+  
+  const [theme, setTheme] = useState<'light' | 'dark'>('light'); // Default to 'light'
 
   useEffect(() => {
+    // This code will only run on the client-side after the initial render
+    const initialTheme = window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    setTheme(initialTheme);
+
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleChange = () => {
       setTheme(mediaQuery.matches ? 'dark' : 'light');

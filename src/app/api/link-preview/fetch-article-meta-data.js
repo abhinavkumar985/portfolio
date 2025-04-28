@@ -1,7 +1,6 @@
-const { JSDOM } = require("jsdom");
-const fs = require("fs");
-const path = require("path");
-
+import {JSDOM} from "jsdom";
+import fs from "fs";
+import path from "path";
 const categories = [
   {
     category_name: "Technology",

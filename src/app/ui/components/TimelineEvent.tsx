@@ -23,7 +23,7 @@ interface Link {
 const TimelineEvent: React.FC<TimelineEventProps> = ({ year, title, description, pills, icon, delay, company, location, links }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
-    //@ts-ignore
+    //@ts-expect-error type error
     const iconElement = iconMap[icon];
 
     return (
@@ -61,7 +61,7 @@ const TimelineEvent: React.FC<TimelineEventProps> = ({ year, title, description,
                         </div>
                     )}
                     <div className="mt-4" aria-label="Related Links">
-                        {links?.map((link, index) => (
+                        {links?.map((link: Link, index: number) => (
                             <div key={index} className="flex gap-2" style={{ alignItems: 'anchor-center' }}>
                                 <FaStar aria-hidden="true" /> <a href={link.url} target='_blank' rel="noopener noreferrer" className="font-medium text-teal-700 dark:text-teal-400 hover:underline" title={link.addionalInfo} aria-label={link.description}>{link.description}</a>
                             </div>
