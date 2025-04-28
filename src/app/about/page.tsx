@@ -128,7 +128,7 @@ export default function About() {
         return acc;
     }, []);
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen" role="main" aria-labelledby="about-section">
             <section id="about" className="container mx-auto py-16 px-4">
                 {/* Hero Intro */}
                 <motion.div
@@ -137,7 +137,7 @@ export default function About() {
                     transition={{ duration: 0.8 }}
                     className="text-center"
                 >
-                    <h1 className="text-5xl font-bold mb-4">
+                    <h1 id="about-section" className="text-5xl font-bold mb-4">
                         Abhinav Kumar
                     </h1>
                     <p className="text-xl text-accent mb-6">
@@ -149,13 +149,14 @@ export default function About() {
                 </motion.div>
 
                 {/* Social Links */}
-                <div className="flex justify-center space-x-6 mt-8">
+                <div className="flex justify-center space-x-6 mt-8" aria-label="Social Media Links">
                     <a
                         href="https://www.linkedin.com/in/abhinav-kumar-985/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-5xl hover:text-accent transition-colors"
                         style={{ color: 'rgb(10, 102, 194)' }}
+                        aria-label="LinkedIn Profile"
                     >
                         <FaLinkedin />
                     </a>
@@ -164,6 +165,7 @@ export default function About() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-5xl hover:text-accent transition-colors"
+                        aria-label="GitHub Profile"
                     >
                         <FaGithub />
                     </a>
@@ -172,6 +174,7 @@ export default function About() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-5xl hover:text-accent transition-colors"
+                        aria-label="Medium Blog"
                     >
                         <FaMedium />
                     </a>
@@ -184,7 +187,7 @@ export default function About() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="mt-16"
                 >
-                    <h2 className="text-4xl font-semibold text-center">
+                    <h2 className="text-4xl font-semibold text-center" id="timeline-section">
                         My Journey
                     </h2>
                     <Timeline events={experienceEvents} />
@@ -197,14 +200,15 @@ export default function About() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="mt-16"
                 >
-                    <h2 className="text-3xl font-semibold text-center mb-8">
+                    <h2 className="text-3xl font-semibold text-center mb-8" id="skills-section">
                         Skills
                     </h2>
-                    <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+                    <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto" role="list" aria-labelledby="skills-section">
                         {skills.reverse().map((skill) => (
                             <span
                                 key={skill}
                                 className="px-4 py-2 rounded-full text-sm font-medium bg-teal-600 text-white"
+                                role="listitem"
                             >
                                 {skill}
                             </span>

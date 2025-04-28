@@ -3,7 +3,7 @@ import React from "react";
 import { BlogDetails } from "./types";
 
 const Blog: React.FC<{ data: BlogDetails }> = ({ data }) => {
-  if (!data) return <div className="text-sm text-gray-500">Preview not available</div>;
+  if (!data) return <div className="text-sm text-gray-500" role="status" aria-live="polite">Preview not available</div>;
 
   return (
     <a
@@ -11,6 +11,7 @@ const Blog: React.FC<{ data: BlogDetails }> = ({ data }) => {
       target="_blank"
       rel="noopener noreferrer"
       className="block rounded-xl overflow-hidden hover:shadow-lg transition-shadow bg-white dark:bg-gray-800 max-w-xl shadow-md dark:shadow-lg"
+      aria-label={`Read more about ${data.title}`}
     >
       {data.image && (
         <img src={data.image} alt={data.title} className="w-full h-48 object-cover" />

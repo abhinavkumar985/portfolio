@@ -15,6 +15,8 @@ const Timeline = ({ events }) => {
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8 }}
             className="relative max-w-4xl mx-auto py-16"
+            role="list"
+            aria-label="Timeline of events"
         >
             {/* Events */}
             {/* @ts-ignore */}
