@@ -20,6 +20,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
   const { theme } = useTheme();
 
   return (
@@ -39,6 +40,22 @@ export default function RootLayout({
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
+        {gtmId && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${gtmId}`}
+            />
+            <script id="google-analytics">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gtmId}');
+              `}
+            </script>
+          </>
+        )}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
