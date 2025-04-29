@@ -1,3 +1,13 @@
+"use client";
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
 export default function Home() {
-  return null; // This won't render since the redirect happens
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/about');
+  }, [router]);
+
+  return null;
 }

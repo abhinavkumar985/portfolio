@@ -2,8 +2,25 @@
 import { FaLinkedin, FaGithub, FaMedium } from 'react-icons/fa';
 import { motion } from "motion/react";
 import Timeline from '../ui/components/Timeline';
+import { useEffect, useState } from 'react';
 
 export default function About() {
+    const [skills, setSkills] = useState<string[]>([]);
+
+    useEffect(() => {
+        const computedSkills = experienceEvents.reduce((acc, index) => {
+            index.pills.forEach((pill: string) => {
+                // @ts-expect-error type error type error
+                if (!acc.includes(pill)) {
+                    // @ts-expect-error type error type error
+                    acc.push(pill);
+                }
+            });
+            return acc;
+        }, []);
+        setSkills(computedSkills.reverse());
+    }, []);
+
     const experienceEvents = [
         {
             year: 'March, 2014',
@@ -61,7 +78,7 @@ export default function About() {
             links: [
                 {
                     addionalInfo: 'My write ups on Medium',
-                    url: 'https://medium.com/@abhinavkumar985',
+                    url: 'https://medium.com/@abhinavkumar985/about',
                     description: 'Medium corner',
                 },
                 {
@@ -117,16 +134,6 @@ export default function About() {
         },
     ];
 
-    const skills = experienceEvents.reduce((acc, index) => {
-        index.pills.forEach((pill: string) => {
-            // @ts-expect-error type error type error
-            if (!acc.includes(pill)) {
-                // @ts-expect-error type error type error
-                acc.push(pill);
-            }
-        });
-        return acc;
-    }, []);
     return (
         <div className="min-h-screen" role="main" aria-labelledby="about-section">
             <section id="about" className="container mx-auto py-16 px-4">
@@ -204,7 +211,7 @@ export default function About() {
                         Skills
                     </h2>
                     <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto" role="list" aria-labelledby="skills-section">
-                        {skills.reverse().map((skill) => (
+                        {skills.map((skill) => (
                             <span
                                 key={skill}
                                 className="px-4 py-2 rounded-full text-sm font-medium bg-teal-600 text-white"
