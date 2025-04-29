@@ -158,7 +158,7 @@ export default function About() {
                 {/* Social Links */}
                 <div className="flex justify-center space-x-6 mt-8" aria-label="Social Media Links">
                     <a
-                        href="https://www.linkedin.com/in/abhinav-kumar-985/"
+                        href="https://www.linkedin.com/in/abhinavkumar985/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-5xl hover:text-accent transition-colors"

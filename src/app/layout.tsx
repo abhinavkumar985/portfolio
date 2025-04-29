@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "./ui/components/Navigation";
 import Footer from "./ui/components/Footer";
 import { ThemeProvider, useTheme } from "./ui/components/ThemeContext";
+import { useEffect } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,6 +23,28 @@ export default function RootLayout({
 }>) {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
   const { theme } = useTheme();
+
+  useEffect(() => {
+    // @ts-expect-error type error type error
+    const handleOutboundLinkClick = (event) => {
+      const link = event.target.closest('a');
+      if (link && link.href && !link.href.includes(window.location.hostname)) {
+        // @ts-expect-error type error type error
+        gtag('event', 'click', {
+          event_category: 'outbound',
+          event_label: link.href,
+          event_value: link.textContent.trim(), // Add link text as event_value
+          transport_type: 'beacon',
+        });
+      }
+    };
+
+    document.addEventListener('click', handleOutboundLinkClick);
+
+    return () => {
+      document.removeEventListener('click', handleOutboundLinkClick);
+    };
+  }, []);
 
   return (
     <html lang="en" className={theme}>
