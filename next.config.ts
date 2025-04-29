@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: 'export', // Enable static export
-  basePath: '/my-portfolio',
+  basePath: '/portfolio',
   distDir: 'out',
 };
 
