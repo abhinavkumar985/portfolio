@@ -1,9 +1,11 @@
 "use client";
 import { BlogCategory, BlogDetails } from "../ui/components/types";
 import Blog from "../ui/components/Blog";
-import { FaMedium } from "react-icons/fa";
+import { FaMedium, FaChartLine } from "react-icons/fa";
 import jsonData from "../api/link-preview/article-metadata.json";
 import { useEffect, useState } from "react";
+import { TOTAL_VIEW, TOTAL_READ, TOTAL_FOLLOWER, MENTEE } from "../constants";
+import AnimatedNumber from "../ui/components/AnimatedNumber";
 
 export default function Blogs() {
     const [groupedBlogs, setGroupedBlogs] = useState<BlogCategory[]>([]);
@@ -32,19 +34,56 @@ export default function Blogs() {
 
         fetchMetadata();
     }, []);
-
+    const highlight = [
+        {
+            number: TOTAL_VIEW,
+            text: "Views",
+        }, {
+            number: TOTAL_READ,
+            text: "Reads",
+        }, {
+            number: TOTAL_FOLLOWER,
+            text: "Followers",
+        },
+        {
+            number: MENTEE,
+            text: "Mentees",
+        },
+    ]
     return (
-        <div className="sm:p-0 lg:p-4 mt-8">
-            {groupedBlogs.map((category, index) => (
-                <div key={index} className={`mb-8 rounded-lg lg:p-4 sm:p-1 `}>
-                    <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-200 flex items-center"> <FaMedium /> <span className="ml-2">{category.category_name}</span></h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {category.blogs.map((blog, idx) => (
-                            <Blog key={idx} data={blog} />
-                        ))}
-                    </div>
+        <>
+            <div className="sm:p-0 lg:p-4 mt-8">
+                <div className="lg:p-3 sm:p-1 ">
+                    <h2 className="text-2xl font-bold mb-4 mt-2 text-gray-800 dark:text-gray-200 flex items-center">
+                        <FaChartLine /> <span className="ml-2">Highlights</span>
+                    </h2>
                 </div>
-            ))}
-        </div>
+                <div className="sm:p-0 lg:p-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {highlight.map((e, i) => (
+                        <div key={i}>
+                            <AnimatedNumber number={e.number} text={e.text} />
+                        </div>
+                    ))}
+                </div>
+                <div className="p-3 flex justify-end">
+                    <span className="text-xs text-gray-400 dark:text-gray-200 mt-2 font-mono">
+                        As of April, 2025
+                    </span>
+                </div>
+
+            </div>
+            <div className="sm:p-0 lg:p-3 mt-8">
+                {groupedBlogs.map((category, index) => (
+                    <div key={index} className={`mb-8 rounded-lg lg:p-3 sm:p-1 `}>
+                        <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-200 flex items-center"> <FaMedium /> <span className="ml-2">{category.category_name}</span></h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {category.blogs.map((blog, idx) => (
+                                <Blog key={idx} data={blog} />
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </>
     );
 }
