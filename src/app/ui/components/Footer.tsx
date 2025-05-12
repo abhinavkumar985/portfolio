@@ -1,8 +1,21 @@
+"use client"; // Ensure this is a client component for hooks
+import { trackContentView } from '@/app/tracking';
+import { useEffect, useRef } from 'react';
 import { FaLinkedin, FaGithub, FaMedium, FaDev, FaStackOverflow } from 'react-icons/fa';
+import { useInView } from 'framer-motion'; // Import useInView
 
 const Footer = () => {
+    const footerRef = useRef(null);
+    const isInView = useInView(footerRef, { once: true }); // Trigger only once
+
+    useEffect(() => {
+        if (isInView) {
+            trackContentView('footer');
+        }
+    }, [isInView]);
+
     return (
-        <footer className="bg-gray-900 dark:bg-gray-700 text-gray-100 dark:text-gray-300 mx-auto py-16 px-4 main-footer" role="contentinfo">
+        <footer ref={footerRef} className="bg-gray-900 dark:bg-gray-700 text-gray-100 dark:text-gray-300 mx-auto py-16 px-4 main-footer" role="contentinfo">
             <div className="container mx-auto text-center">
                 {/* Main Text */}
                 <h2 className="text-3xl font-bold text-teal-400 dark:text-teal-300 font-mono" aria-label="Living, learning, and leveling up">

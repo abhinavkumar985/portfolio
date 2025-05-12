@@ -1,9 +1,10 @@
 "use client";
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react'; // Import useEffect
 import { FaBriefcase, FaPlane, FaUserGraduate, FaUserTie, FaBlogger, FaHandHoldingHeart, FaStar } from 'react-icons/fa';
 import VerticalDivider from './VerticalDivider';
 import { TimelineEventProps } from './types';
+import { trackContentView } from '@/app/tracking';
 
 const iconMap = {
     graduation: <FaUserGraduate className="text-neon-cyan mr-2" size="22" />,
@@ -25,6 +26,13 @@ const TimelineEvent: React.FC<TimelineEventProps> = ({ year, title, description,
     const isInView = useInView(ref, { once: true });
     //@ts-expect-error type error
     const iconElement = iconMap[icon];
+
+    useEffect(() => {
+        if (isInView) {
+            trackContentView(title);
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isInView, title]); // title is added for completeness, though with once:true, isInView change is the primary trigger
 
     return (
         <>

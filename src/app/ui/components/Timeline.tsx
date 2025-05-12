@@ -1,24 +1,10 @@
 "use client";
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
 import TimelineEvent from './TimelineEvent';
 
 // @ts-expect-error type error
 const Timeline = ({ events }) => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
-
     return (
-        <motion.div
-            ref={ref}
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative max-w-4xl mx-auto py-16"
-            role="list"
-            aria-label="Timeline of events"
-        >
-            {/* Events */}
+        <div>
             {/* @ts-expect-error type error */}
             {events.map((event, index) => (
                 <TimelineEvent
@@ -34,7 +20,7 @@ const Timeline = ({ events }) => {
                     links={event?.links}
                 />
             ))}
-        </motion.div>
+        </div>
     );
 };
 

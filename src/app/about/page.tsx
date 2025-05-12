@@ -1,8 +1,9 @@
 "use client";
 import { FaLinkedin, FaGithub, FaMedium } from 'react-icons/fa';
-import { motion } from "motion/react";
+import { motion, useInView } from "framer-motion"; // Import useInView
 import Timeline from '../ui/components/Timeline';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react'; // Import useRef
+import { trackContentView } from '../tracking';
 
 export default function About() {
     const [skills, setSkills] = useState<string[]>([]);
@@ -134,6 +135,46 @@ export default function About() {
         },
     ];
 
+    // Ref for the "My Journey" section
+    const journeySectionRef = useRef(null);
+    const isJourneySectionInView = useInView(journeySectionRef, { once: true }); // Trigger only once
+
+    useEffect(() => {
+        if (isJourneySectionInView) {
+            trackContentView('journey_start');
+        }
+    }, [isJourneySectionInView]);
+
+    // Ref for the "Introduction" section
+    const introSectionRef = useRef(null);
+    const isIntroSectionInView = useInView(introSectionRef, { once: true });
+
+    useEffect(() => {
+        if (isIntroSectionInView) {
+            trackContentView('introduction');
+        }
+    }, [isIntroSectionInView]);
+
+    // Ref for the "Top Links" (Social Links) section
+    const topLinksSectionRef = useRef(null);
+    const isTopLinksSectionInView = useInView(topLinksSectionRef, { once: true });
+
+    useEffect(() => {
+        if (isTopLinksSectionInView) {
+            trackContentView('top_link');
+        }
+    }, [isTopLinksSectionInView]);
+
+    // Ref for the "Skills" section
+    const skillsSectionRef = useRef(null);
+    const isSkillsSectionInView = useInView(skillsSectionRef, { once: true });
+
+    useEffect(() => {
+        if (isSkillsSectionInView) {
+            trackContentView('skills');
+        }
+    }, [isSkillsSectionInView]);
+
     return (
         <div className="min-h-screen" role="main" aria-labelledby="about-section">
             <section id="about" className="container mx-auto py-16 px-4">
@@ -142,6 +183,7 @@ export default function About() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
+                    ref={introSectionRef} // Assign ref
                     className="text-center"
                 >
                     <h1 id="about-section" className="text-5xl font-bold mb-4">
@@ -156,42 +198,51 @@ export default function About() {
                 </motion.div>
 
                 {/* Social Links */}
-                <div className="flex justify-center space-x-6 mt-8" aria-label="Social Media Links">
-                    <a
-                        href="https://www.linkedin.com/in/abhinavkumar985/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-5xl hover:text-accent transition-colors"
-                        style={{ color: 'rgb(10, 102, 194)' }}
-                        aria-label="LinkedIn Profile"
-                    >
-                        <FaLinkedin />
-                    </a>
-                    <a
-                        href="https://github.com/abhinavkumar985"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-5xl hover:text-accent transition-colors"
-                        aria-label="GitHub Profile"
-                    >
-                        <FaGithub />
-                    </a>
-                    <a
-                        href="https://medium.com/@abhinavkumar985"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-5xl hover:text-accent transition-colors"
-                        aria-label="Medium Blog"
-                    >
-                        <FaMedium />
-                    </a>
-                </div>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    ref={topLinksSectionRef} // Assign ref
+                    className="text-center"
+                >
+                    <div className="flex justify-center space-x-6 mt-8" aria-label="Social Media Links">
+                        <a
+                            href="https://www.linkedin.com/in/abhinavkumar985/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-5xl hover:text-accent transition-colors"
+                            style={{ color: 'rgb(10, 102, 194)' }}
+                            aria-label="LinkedIn Profile"
+                        >
+                            <FaLinkedin />
+                        </a>
+                        <a
+                            href="https://github.com/abhinavkumar985"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-5xl hover:text-accent transition-colors"
+                            aria-label="GitHub Profile"
+                        >
+                            <FaGithub />
+                        </a>
+                        <a
+                            href="https://medium.com/@abhinavkumar985"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-5xl hover:text-accent transition-colors"
+                            aria-label="Medium Blog"
+                        >
+                            <FaMedium />
+                        </a>
+                    </div>
+                </motion.div>
 
                 {/* Timeline Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
+                    ref={journeySectionRef} // Assign the ref here
                     className="mt-16"
                 >
                     <h2 className="text-4xl font-semibold text-center" id="timeline-section">
@@ -205,6 +256,7 @@ export default function About() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
+                    ref={skillsSectionRef} // Assign ref
                     className="mt-16"
                 >
                     <h2 className="text-3xl font-semibold text-center mb-8" id="skills-section">
