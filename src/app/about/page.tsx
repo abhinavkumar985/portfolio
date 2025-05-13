@@ -151,7 +151,11 @@ export default function About() {
                         Senior Engineer @ Zalando | Scalable UX & Frontend Systems
                     </p>
                     <p className="text-lg max-w-2xl mx-auto">
-                        I’m a Frontend Software Enginneer based in Berlin, Germany 🇩🇪 (origionally from India 🇮🇳), passionate about building scalable, customer-focused web experiences with React & TypeScript. With ~10 years in tech, I love solving problems, contributing to the community, and always learning something new. 📚✈️
+                        Hey there! 👋 I’m a frontend engineer based in Berlin 🇩🇪 (originally from India 🇮🇳), building fast, intuitive, and scalable web experiences using React and TypeScript. At Zalando, I help shape the future of online fashion through AI-powered interfaces—where design meets performance at scale.
+                    </p>
+                    <br />
+                    <p className="text-lg max-w-2xl mx-auto">
+                        With nearly a decade in tech, I care deeply about solving real user problems, leading with empathy, and bridging the gap between product vision and engineering execution. I also mentor upcoming engineers, contribute to the tech community, and stay curious—whether it’s exploring new frameworks or new cities. 📚✈️
                     </p>
                 </motion.div>
 

@@ -29,11 +29,10 @@ export default function RootLayout({
     const handleOutboundLinkClick = (event) => {
       const link = event.target.closest('a');
       if (link && link.href && !link.href.includes(window.location.hostname)) {
-        // @ts-expect-error type error type error
         gtag('event', 'click', {
           event_category: 'outbound',
           event_label: link.href,
-          event_value: link.textContent.trim(), // Add link text as event_value
+          event_value: link.text || link.getAttribute('aria-label') || link.getAttribute('title'), // Add link text as event_value
           transport_type: 'beacon',
         });
       }
