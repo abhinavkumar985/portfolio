@@ -18,7 +18,8 @@
     "jsx": "preserve",
     "incremental": true,
     "outDir": "dist",
-    "plugins": [
+    "types": ["node", "react", "react-dom", "jsdom", "gtag.js"],
+     "plugins": [
       {
         "name": "next"
       }
